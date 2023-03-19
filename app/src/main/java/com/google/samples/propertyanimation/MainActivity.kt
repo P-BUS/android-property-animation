@@ -81,6 +81,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun translater() {
+        val animator = ObjectAnimator.ofFloat(star, View.TRANSLATION_X, 200f)
+        animator.apply {
+            this.duration = 1000
+            this.disableViewDuringAnimation(translateButton)
+            this.repeatCount = 1
+            this.repeatMode = ObjectAnimator.REVERSE
+            this.start()
+        }
+
     }
 
     private fun scaler() {
